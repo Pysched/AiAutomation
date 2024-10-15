@@ -1,0 +1,21 @@
+{
+  "name": "selenium-testing",
+  "version": "1.0.0",
+  "description": "",
+  "type":"module",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/*.test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "selenium-webdriver": "^4.25.0"
+  },
+  "devDependencies": {
+    "chai": "^5.1.1",
+    "chromedriver": "^129.0.4",
+    "mocha": "^10.7.3"
+  }
+}

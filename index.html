@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+      }
+      .inputBox {
+        margin-top: 15px;
+      }
+      h1 {
+        color: red;
+      }
+      div h1 {
+        color: blue;
+      }
+      .box:nth-child(3) {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>HMTL Page</h1>
+    <div>
+      <h1>First Paragraph</h1>
+      <p>This is a paragraph</p>
+      <h1>Hello, Playwright!</h1>
+    </div>
+    <div id="box1" class="box">Box 1</div>
+    <div id="box2" class="box">Box 2</div>
+    <div id="box3" class="box">Box 3</div>
+    <div class="inputBox">
+      <input id="nameInput" type="text" name="name" placeholder="Your name:" />
+      <input id="submitBtn" type="button" value="Submit" />
+    </div>
+    <h1>Second paragraph</h1>
+    <input type="password" name="pwd" id="pwd" />
+
+    <p id="outcome"></p>
+
+    <script>
+      const arr = [];
+      const btn = document.getElementById("submitBtn");
+      const input = document.getElementById("nameInput");
+      const outcome = document.getElementById("outcome");
+      btn.addEventListener("click", () => {
+        outcome.innerText = input.value;
+        arr.push(input.value);
+        console.log(arr);
+        arr.forEach((element) => {
+          const li = document.createElement("li");
+          li.textContent = element;
+          outcome.appendChild(li);
+        });
+      });
+
+      //   let intVal = parseInt("1324", 10);
+      //   let floatVal = parseFloat("1.2325");
+      //   alert(`Parse Int: ${intVal} || Parse Float: ${floatVal}`);
+
+      const test = (message) => {
+        // console.log(message);
+        alert(message);
+      };
+
+      //   test("This is a test message");
+      //   setTimeout(test("This is a test message"), 15000);
+      setTimeout(() => {
+        // console.log("this is the first message");
+        test("This is a test message");
+      }, 5000);
+      setTimeout(() => {
+        // console.log("this is the second message");
+        test("This is a test message");
+      }, 3000);
+      setTimeout(() => {
+        // console.log("this is the third message");
+        test("This is a test message");
+      }, 1000);
+    </script>
+  </body>
+</html>
